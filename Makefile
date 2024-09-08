@@ -16,4 +16,4 @@ clean:
 	rm -rf ./with
 
 with: with.c
-	clang with.c -o ./with
+	clang with.c -O3 -flto -o ./with
