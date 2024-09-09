@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache curl iproute2 iptables
+RUN apk add --no-cache tini curl iproute2 iptables
 
 RUN curl -s uudeck.com | sed 's/check_running$//g' | sed 's/systemctl/true/g' | sh
 
@@ -12,4 +12,4 @@ RUN chmod 700 /init.sh
 
 VOLUME [ "/persist" ]
 
-ENTRYPOINT [ "/init.sh" ]
+ENTRYPOINT [ "/sbin/tini", "/init.sh" ]
