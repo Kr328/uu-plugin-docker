@@ -1,0 +1,8 @@
+services:
+  uu-plugin:
+    build:
+      context: "."
+    privileged: true
+    network_mode: host
+    volumes:
+      - "./run/persist:/persist"

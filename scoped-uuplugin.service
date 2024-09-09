@@ -1,8 +1,0 @@
-[Unit]
-Description=Scoped netease UU plugin.
-
-[Service]
-ExecStart=/usr/lib/scoped-uuplugin/daemon.sh
-
-[Install]
-WantedBy=multi-user.target
